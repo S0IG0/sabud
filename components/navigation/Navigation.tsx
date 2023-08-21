@@ -1,5 +1,5 @@
 import {NavigationContainer} from "@react-navigation/native";
-import {Names, Page, pages} from "./pages";
+import {Names, pages} from "./pages";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import Auth from "../store/Auth";
 import {observer} from "mobx-react-lite";
