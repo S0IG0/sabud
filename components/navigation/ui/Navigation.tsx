@@ -1,19 +1,25 @@
-import {NavigationContainer} from "@react-navigation/native";
-import {Names, pages} from "./pages";
+import { NavigationContainer} from "@react-navigation/native";
+import {Names, pages} from "../pages";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import Auth from "../store/Auth";
+import Auth from "../../store/Auth";
 import {observer} from "mobx-react-lite";
 import {StyleSheet} from "react-native";
 import TabButton from "./TabButton";
+import commonStyles from "./commonStyles";
+
 
 
 const BottomTabNavigator = createBottomTabNavigator();
 const Navigation = observer(() => {
     const isAuth = Auth.isAuth;
     return (
+
         <NavigationContainer>
             <BottomTabNavigator.Navigator
                 initialRouteName={isAuth ? Names.HOME : Names.LOGIN}
+                sceneContainerStyle={{
+                    backgroundColor: "primary"
+                }}
                 screenOptions={{
                     tabBarStyle: styles.tabBar,
                 }}
@@ -45,7 +51,8 @@ const styles = StyleSheet.create({
         right: "3%",
         left: "3%",
         borderRadius: 16,
-        borderTopWidth: 0
+        borderTopWidth: 0,
+        ...commonStyles.bottomBar,
     },
 });
 

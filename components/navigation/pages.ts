@@ -17,23 +17,23 @@ export const pages = new Map<string, Page>()
         name: Names.HOME,
         component: Home,
         icon: {default: 'home-outline', focused: 'home-outline'},
-        label: 'главная',
+        label: 'Главная',
     })
     .set(Names.LOGIN, {
         name: Names.LOGIN,
         component: Login,
         icon: {default: 'log-in-outline', focused: 'log-in-outline'},
-        label: 'вход',
+        label: 'Вход',
     })
     .set(Names.HISTORY, {
         name: Names.HISTORY,
         component: History,
         icon: {default: 'receipt-outline', focused: 'receipt-outline'},
-        label: 'история',
+        label: 'История',
     })
     .set(Names.SALARY, {
         name: Names.SALARY,
         component: Salary,
         icon: {default: 'wallet-outline', focused: 'wallet-outline'},
-        label: 'зарплата',
+        label: 'Зарплата',
     })
