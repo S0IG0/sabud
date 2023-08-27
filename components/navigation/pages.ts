@@ -1,18 +1,22 @@
-import {Page} from "./index";
+import {BottomPage, Page} from "./index";
 
 export enum Names {
     HOME = 'home',
     LOGIN = 'login',
-    HISTORY = 'history',
     SALARY = 'salary',
+    HISTORY = 'history',
+    HISTORY_LIST = 'history-list',
+    HISTORY_DETAIL = 'history-detail',
 }
 
 import Home from "../pages/Home";
 import Login from "../pages/Login";
-import History from "../pages/History";
 import Salary from "../pages/Salary";
+import History from "../pages/history/History";
+import HistoryList from "../pages/history/HistoryList";
+import HistoryDetail from "../pages/history/HistoryDetail";
 
-export const pages = new Map<string, Page>()
+export const tabPages = new Map<string, BottomPage>()
     .set(Names.HOME, {
         name: Names.HOME,
         component: Home,
@@ -36,4 +40,17 @@ export const pages = new Map<string, Page>()
         component: Salary,
         icon: {default: 'wallet-outline', focused: 'wallet-outline'},
         label: 'Зарплата',
+    })
+
+
+export const historyStackPages = new Map<string, Page>()
+    .set(Names.HISTORY_LIST, {
+        name: Names.HISTORY_LIST,
+        component: HistoryList,
+        label: 'Вся история',
+    })
+    .set(Names.HISTORY_DETAIL, {
+        name: Names.HISTORY_DETAIL,
+        component: HistoryDetail,
+        label: 'История',
     })

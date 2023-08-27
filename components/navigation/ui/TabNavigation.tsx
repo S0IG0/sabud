@@ -1,5 +1,5 @@
 import { NavigationContainer} from "@react-navigation/native";
-import {Names, pages} from "../pages";
+import {Names, tabPages} from "../pages";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import Auth from "../../store/Auth";
 import {observer} from "mobx-react-lite";
@@ -10,10 +10,9 @@ import commonStyles from "./commonStyles";
 
 
 const BottomTabNavigator = createBottomTabNavigator();
-const Navigation = observer(() => {
+const TabNavigation = observer(() => {
     const isAuth = Auth.isAuth;
     return (
-
         <NavigationContainer>
             <BottomTabNavigator.Navigator
                 initialRouteName={isAuth ? Names.HOME : Names.LOGIN}
@@ -24,7 +23,7 @@ const Navigation = observer(() => {
                     tabBarStyle: styles.tabBar,
                 }}
             >
-                {Array.from(pages.values()).map(page =>
+                {Array.from(tabPages.values()).map(page =>
                     ((isAuth && page.name !== Names.LOGIN) ||
                         (!isAuth && page.name === Names.LOGIN)) &&
                     <BottomTabNavigator.Screen
@@ -52,9 +51,9 @@ const styles = StyleSheet.create({
         left: "3%",
         borderRadius: 16,
         borderTopWidth: 0,
-        ...commonStyles.bottomBar,
+        ...commonStyles.navigationColor,
     },
 });
 
-export default Navigation;
+export default TabNavigation;
 

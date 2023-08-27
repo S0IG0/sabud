@@ -5,7 +5,7 @@ const commonStyles  = StyleSheet.create({
         backgroundColor: "orange",
         opacity: 0.6,
     },
-    bottomBar: {
+    navigationColor: {
         backgroundColor: "white"
     }
 })

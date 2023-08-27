@@ -13,7 +13,7 @@ const AnimateConfig = {
     useNativeDriver: true,
 }
 
-const settings = {
+export const settingsIconsCircles = {
     selectedColor: "black",
     unSelectedColor: "black",
     size: HEIGHT / 22,
@@ -92,8 +92,8 @@ const TabButton = (props: Props) => {
                 >
                     <Ionicons
                         name={isSelected ? page.icon.focused : page.icon.default}
-                        color={isSelected ? settings.selectedColor : settings.unSelectedColor}
-                        size={settings.size}
+                        color={isSelected ? settingsIconsCircles.selectedColor : settingsIconsCircles.unSelectedColor}
+                        size={settingsIconsCircles.size}
                     />
                 </Animated.View>
             </View>
@@ -121,18 +121,18 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     circleOrange: {
-        width: settings.circleActive.size,
-        height: settings.circleActive.size,
-        borderRadius: settings.circleActive.size / 2,
+        width: settingsIconsCircles.circleActive.size,
+        height: settingsIconsCircles.circleActive.size,
+        borderRadius: settingsIconsCircles.circleActive.size / 2,
         position: "absolute",
         ...commonStyles.iconActive,
     },
     circleBottom: {
-        width: settings.circleBottom.size,
-        height: settings.circleBottom.size,
-        borderRadius: settings.circleBottom.size / 2,
+        width: settingsIconsCircles.circleBottom.size,
+        height: settingsIconsCircles.circleBottom.size,
+        borderRadius: settingsIconsCircles.circleBottom.size / 2,
         position: "absolute",
-        ...commonStyles.bottomBar,
+        ...commonStyles.navigationColor,
     },
     text: {
         position: "absolute",

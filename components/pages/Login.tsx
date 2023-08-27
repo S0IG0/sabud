@@ -15,7 +15,9 @@ const Login = () => {
     const login = () => Auth.setIsAuth(true);
 
     return (
-        <SafeAreaView style={[styles.container,]}>
+        <SafeAreaView
+            style={[styles.container,]}
+        >
             <View
                 style={[styles.content,]}
             >
@@ -58,6 +60,7 @@ const styles = StyleSheet.create({
     },
     content: {
         width: "80%",
+        maxWidth: 400
     },
 });
 

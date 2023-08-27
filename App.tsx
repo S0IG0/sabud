@@ -1,4 +1,4 @@
-import Navigation from "./components/navigation/ui/Navigation";
+import TabNavigation from "./components/navigation/ui/TabNavigation";
 import {View, StyleSheet} from "react-native";
 
 const App = () => {
@@ -6,7 +6,7 @@ const App = () => {
         <View
             style={[styles.app,]}
         >
-            <Navigation></Navigation>
+            <TabNavigation></TabNavigation>
         </View>
     );
 }
